@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["file:///home/codezeros/Desktop/Practice/Crypto-Exchange.ts/app/layout.tsx"],"sourcesContent":["export default con"],"names":[],"mappings":";;;uCAAe","debugId":null}}]
+}

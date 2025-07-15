@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///home/codezeros/Desktop/Practice/Crypto-Exchange.ts/app/%28main%29/dashboard/page.tsx"],"sourcesContent":["const Dashboard = () => {\n    return(\n        <div>\n            <h1>Dashboard</h1>\n        </div>\n    )\n}\n\nexport default Dashboard;"],"names":[],"mappings":";;;;;AAAA,MAAM,YAAY;IACd,qBACI,8OAAC;kBACG,cAAA,8OAAC;sBAAG;;;;;;;;;;;AAGhB;uCAEe","debugId":null}}]
+}

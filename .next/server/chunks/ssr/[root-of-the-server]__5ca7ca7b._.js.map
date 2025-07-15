@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 26, "column": 0}, "map": {"version":3,"sources":["file:///home/codezeros/Desktop/Practice/Crypto-Exchange.ts/app/%28main%29/dashboard/page.tsx"],"sourcesContent":["import Cr from ''\n\nexport default function DashboardPage() {\n  return (\n    <div className=\"p-6 max-w-7xl mx-auto\">\n      <h1 className=\"text-3xl font-bold mb-6 text-yellow-400\">Top Cryptocurrencies</h1>\n      <CryptoList />\n    </div>\n  )\n}\n"],"names":[],"mappings":";;;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;;0BACb,8OAAC;gBAAG,WAAU;0BAA0C;;;;;;0BACxD,8OAAC;;;;;;;;;;;AAGP","debugId":null}}]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 37, "column": 0}, "map": {"version":3,"sources":["file:///home/codezeros/Desktop/Practice/Crypto-Exchange.ts/components/Navbar.tsx"],"sourcesContent":["'use client';\nimport Link from 'next/link';\n\nexport const Navbar = () => {\n  return (\n    <nav className=\"w-full bg-gray-800 px-6 py-4 flex justify-between items-center shadow\">\n      <Link href=\"/\" className=\"text-xl font-bold text-white\">\n        🪙 CryptoXchange\n      </Link>\n      <div className=\"space-x-4 text-sm\">\n        <Link href=\"/dashboard\">Dashboard</Link>\n        <Link href=\"/wallet\">Wallet</Link>\n        <Link href=\"/swap\">Swap</Link>\n      </div>\n    </nav>\n  );\n};\n"],"names":[],"mappings":";;;;AACA;AADA;;;AAGO,MAAM,SAAS;IACpB,qBACE,8OAAC;QAAI,WAAU;;0BACb,8OAAC,4JAAA,CAAA,UAAI;gBAAC,MAAK;gBAAI,WAAU;0BAA+B;;;;;;0BAGxD,8OAAC;gBAAI,WAAU;;kCACb,8OAAC,4JAAA,CAAA,UAAI;wBAAC,MAAK;kCAAa;;;;;;kCACxB,8OAAC,4JAAA,CAAA,UAAI;wBAAC,MAAK;kCAAU;;;;;;kCACrB,8OAAC,4JAAA,CAAA,UAAI;wBAAC,MAAK;kCAAQ;;;;;;;;;;;;;;;;;;AAI3B","debugId":null}}]
+}
