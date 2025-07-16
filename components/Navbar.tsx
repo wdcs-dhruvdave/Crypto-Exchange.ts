@@ -34,7 +34,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-6 text-sm font-medium">
             <Link href="/assets" className="hover:text-yellow-400 transition">Market</Link>
-            <Link href="/swap" className="hover:text-yellow-400 transition">Swap</Link>
+            {/* <Link href="/swap" className="hover:text-yellow-400 transition">Swap</Link> */}
 
             {user && (
               <>
@@ -44,7 +44,6 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Auth Controls */}
           <div className="flex items-center gap-4">
             {user ? (
               <>

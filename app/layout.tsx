@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   description: 'Landing page for Crypto Exchange Platform',
 }
 
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">

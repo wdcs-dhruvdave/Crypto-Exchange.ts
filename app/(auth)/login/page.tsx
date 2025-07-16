@@ -42,7 +42,7 @@ export default function LoginPage() {
       if (user) {
         localStorage.setItem('user', JSON.stringify(user))
         toast.success('Welcome back!')
-        router.push('/dashboard')
+        router.push('/market')
       } else {
         toast.error('Invalid credentials')
       }

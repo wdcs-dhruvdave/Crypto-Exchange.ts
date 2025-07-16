@@ -28,8 +28,8 @@ export default function LandingPage() {
             Features
           </Link>
           {user ? (
-            <Link href="/dashboard" className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white text-sm font-semibold">
-              Go to Dashboard
+            <Link href="/market" className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white text-sm font-semibold">
+              Go to market
             </Link>
           ) : (
             <Link href="/login" className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white text-sm font-semibold">
@@ -49,8 +49,8 @@ export default function LandingPage() {
             Features
           </Link>
           {user ? (
-            <Link href="/dashboard" onClick={() => setMenuOpen(false)} className="block bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white text-center">
-              Go to Dashboard
+            <Link href="/market" onClick={() => setMenuOpen(false)} className="block bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white text-center">
+              Go to market
             </Link>
           ) : (
             <Link href="/login" onClick={() => setMenuOpen(false)} className="block bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white text-center">
@@ -75,10 +75,10 @@ export default function LandingPage() {
         </p>
         <div className="flex justify-center gap-4">
           <Link
-            href="/dashboard"
+            href="/market"
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition"
           >
-            Get Started
+            Go To market
           </Link>
           <Link
             href="#features"
@@ -130,10 +130,10 @@ export default function LandingPage() {
         <h2 className="text-4xl font-bold mb-4">Start Trading Today</h2>
         <p className="mb-8 text-white text-lg">Join thousands of users on our secure, fast, and user-friendly platform.</p>
         <Link
-          href="/dashboard"
+          href="/market"
           className="bg-white text-black px-6 py-3 rounded-lg text-lg font-semibold hover:bg-gray-200 transition"
         >
-          Go to Dashboard
+          Go to Market
         </Link>
       </motion.section>
 

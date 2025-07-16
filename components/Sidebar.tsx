@@ -61,9 +61,9 @@ export const Sidebar = () => {
       <nav className="flex-1">
         <ul className="space-y-2">
 
-          <SidebarButton label="Market" icon="📊" href="/dashboard" />
+          <SidebarButton label="Market" icon="📊" href="/market" />
           <SidebarButton label="Wallet" icon="👛" href="/wallet" show={isLoggedIn} />
-          <SidebarButton label="Swap" icon="🔁" href="/swap" show />
+          {/* <SidebarButton label="Swap" icon="🔁" href="/swap" show /> */}
           <SidebarButton label="Transactions" icon="📜" href="/transactions" show={isLoggedIn} />
           <SidebarButton label="Profile" icon="👤" href="/profile" show={isLoggedIn} />
 
