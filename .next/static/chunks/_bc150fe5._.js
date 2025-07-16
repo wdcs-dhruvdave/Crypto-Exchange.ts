@@ -67,7 +67,11 @@ async function addMoney(walletId, currentBalance, amount) {
         console.log('🟢 Money added:', res.data);
         return res.data;
     } catch (err) {
-        console.error('❌ Error adding money:', err.message);
+        if (err instanceof Error) {
+            console.error('❌ Error adding money:', err.message);
+        } else {
+            console.error('❌ Error adding money:', err);
+        }
         throw new Error('Failed to add money');
     }
 }

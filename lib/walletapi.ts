@@ -54,8 +54,12 @@ export async function addMoney(walletId: string, currentBalance: number, amount:
     const res = await axios.put<Wallet>(`${BASE_URL}/${walletId}`, updatedWallet)
     console.log('🟢 Money added:', res.data)
     return res.data
-  } catch (err) {
-    console.error('❌ Error adding money:', err.message)
+  } catch (err : unknown) {
+    if (err instanceof Error) {
+      console.error('❌ Error adding money:', err.message)
+    } else {
+      console.error('❌ Error adding money:', err)
+    }
     throw new Error('Failed to add money')
   }
 }
