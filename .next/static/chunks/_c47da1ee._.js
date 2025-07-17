@@ -77,6 +77,7 @@ function SwapModal(param) {
             setLoading(false);
         }
     };
+    const handle;
     const updateRate = ()=>{
         const from = cryptoList.find((a)=>a.symbol === fromToken);
         const to = cryptoList.find((a)=>a.symbol === toToken);
@@ -109,7 +110,7 @@ function SwapModal(param) {
                             children: "Crypto Swap"
                         }, void 0, false, {
                             fileName: "[project]/components/SwapModal.tsx",
-                            lineNumber: 69,
+                            lineNumber: 91,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -118,13 +119,13 @@ function SwapModal(param) {
                             children: "✕"
                         }, void 0, false, {
                             fileName: "[project]/components/SwapModal.tsx",
-                            lineNumber: 70,
+                            lineNumber: 92,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/SwapModal.tsx",
-                    lineNumber: 68,
+                    lineNumber: 90,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -132,7 +133,7 @@ function SwapModal(param) {
                     children: "Select assets to swap. Rates are updated in real-time."
                 }, void 0, false, {
                     fileName: "[project]/components/SwapModal.tsx",
-                    lineNumber: 72,
+                    lineNumber: 94,
                     columnNumber: 9
                 }, this),
                 loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -142,34 +143,34 @@ function SwapModal(param) {
                             className: "h-5 w-full bg-gray-700 rounded animate-pulse"
                         }, void 0, false, {
                             fileName: "[project]/components/SwapModal.tsx",
-                            lineNumber: 76,
+                            lineNumber: 98,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "h-10 w-full bg-gray-700 rounded animate-pulse"
                         }, void 0, false, {
                             fileName: "[project]/components/SwapModal.tsx",
-                            lineNumber: 77,
+                            lineNumber: 99,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "h-5 w-full bg-gray-700 rounded animate-pulse"
                         }, void 0, false, {
                             fileName: "[project]/components/SwapModal.tsx",
-                            lineNumber: 78,
+                            lineNumber: 100,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "h-10 w-full bg-gray-700 rounded animate-pulse"
                         }, void 0, false, {
                             fileName: "[project]/components/SwapModal.tsx",
-                            lineNumber: 79,
+                            lineNumber: 101,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/SwapModal.tsx",
-                    lineNumber: 75,
+                    lineNumber: 97,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                     children: [
@@ -180,7 +181,7 @@ function SwapModal(param) {
                                     children: "From"
                                 }, void 0, false, {
                                     fileName: "[project]/components/SwapModal.tsx",
-                                    lineNumber: 85,
+                                    lineNumber: 107,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -194,7 +195,7 @@ function SwapModal(param) {
                                             className: "flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/components/SwapModal.tsx",
-                                            lineNumber: 87,
+                                            lineNumber: 109,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -236,18 +237,18 @@ function SwapModal(param) {
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/components/SwapModal.tsx",
-                                                lineNumber: 95,
+                                                lineNumber: 117,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/SwapModal.tsx",
-                                            lineNumber: 94,
+                                            lineNumber: 116,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/SwapModal.tsx",
-                                    lineNumber: 86,
+                                    lineNumber: 108,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -258,13 +259,13 @@ function SwapModal(param) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/SwapModal.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 156,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/SwapModal.tsx",
-                            lineNumber: 84,
+                            lineNumber: 106,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -272,7 +273,7 @@ function SwapModal(param) {
                             children: "↓"
                         }, void 0, false, {
                             fileName: "[project]/components/SwapModal.tsx",
-                            lineNumber: 137,
+                            lineNumber: 159,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -282,7 +283,7 @@ function SwapModal(param) {
                                     children: "To"
                                 }, void 0, false, {
                                     fileName: "[project]/components/SwapModal.tsx",
-                                    lineNumber: 140,
+                                    lineNumber: 162,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -295,7 +296,7 @@ function SwapModal(param) {
                                             className: "flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/components/SwapModal.tsx",
-                                            lineNumber: 142,
+                                            lineNumber: 164,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -334,18 +335,18 @@ function SwapModal(param) {
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/components/SwapModal.tsx",
-                                                lineNumber: 149,
+                                                lineNumber: 171,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/SwapModal.tsx",
-                                            lineNumber: 148,
+                                            lineNumber: 170,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/SwapModal.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 163,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -360,13 +361,13 @@ function SwapModal(param) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/SwapModal.tsx",
-                                    lineNumber: 184,
+                                    lineNumber: 206,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/SwapModal.tsx",
-                            lineNumber: 139,
+                            lineNumber: 161,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -378,7 +379,7 @@ function SwapModal(param) {
                             children: "Swap"
                         }, void 0, false, {
                             fileName: "[project]/components/SwapModal.tsx",
-                            lineNumber: 189,
+                            lineNumber: 211,
                             columnNumber: 13
                         }, this)
                     ]
@@ -386,12 +387,12 @@ function SwapModal(param) {
             ]
         }, void 0, true, {
             fileName: "[project]/components/SwapModal.tsx",
-            lineNumber: 67,
+            lineNumber: 89,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/SwapModal.tsx",
-        lineNumber: 66,
+        lineNumber: 88,
         columnNumber: 5
     }, this);
 }

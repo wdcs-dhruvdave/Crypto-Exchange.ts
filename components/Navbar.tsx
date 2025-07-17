@@ -25,7 +25,7 @@ export function Navbar() {
 
   return (
     <>
-      <Toaster position="top-center" />
+      {/* <Toaster position="top-center" /> */}
       <nav className="w-full bg-gray-950 text-white px-6 py-4 border-b border-gray-800 shadow-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-yellow-400">
@@ -33,7 +33,7 @@ export function Navbar() {
           </Link>
 
           <div className="flex items-center gap-6 text-sm font-medium">
-            <Link href="/assets" className="hover:text-yellow-400 transition">Market</Link>
+            <Link href="/market" className="hover:text-yellow-400 transition">Market</Link>
             {/* <Link href="/swap" className="hover:text-yellow-400 transition">Swap</Link> */}
 
             {user && (
@@ -48,7 +48,7 @@ export function Navbar() {
             {user ? (
               <>
                 <span className="text-sm hidden sm:inline">
-                  👋 <span className="font-semibold">{user.name}</span>
+                  Hello👋 <span className="font-semibold">{user.name}</span>
                 </span>
                 <button
                   onClick={logout}

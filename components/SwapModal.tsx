@@ -3,7 +3,10 @@
 import { useEffect, useState } from 'react'
 import { CryptoAsset } from '@/types/crypto'
 import { fetchCryptoAssets } from '@/lib/cryptoapi'
+import { getLoggedInUser } from '@/lib/auth'
 import Select from 'react-select'
+import toast from 'react-hot-toast'
+import { on } from 'events'
 
 export default function SwapModal({
   asset,
@@ -37,6 +40,33 @@ export default function SwapModal({
       console.error('Failed to fetch assets:', err)
       setLoading(false)
     }
+  }
+
+  const handleSwap = async () => {
+    const user = getLoggedInUser()
+    if (!user) {
+      toast.error('User not logged in')
+      return
+    }
+    if (!fromToken || !toToken || !fromAmount) {
+      toast.error('Please fill all fields')
+      return
+    }
+    if (fromToken === toToken) {
+      toast.error('Cannot swap the same token')
+      return
+    }
+    if (+fromAmount <= 0) {
+      toast.error('Amount must be greater than 0')
+      return
+    }
+
+    console.log(`Swapping ${fromAmount} ${fromToken} to ${toAmount} ${toToken}`)
+    toast.success(`Swapped ${fromAmount} ${fromToken} to ${toAmount} ${toToken}`)
+ 
+    
+    onClose()
+
   }
 
   const updateRate = () => {
@@ -188,10 +218,7 @@ export default function SwapModal({
 
             <button
               className="w-full py-2 rounded bg-blue-600 hover:bg-blue-500 transition"
-              onClick={() => {
-                console.log(`Swapped ${fromAmount} ${fromToken} → ${toAmount} ${toToken}`)
-                onClose()
-              }}
+              onClick={handleSwap}
             >
               Swap
             </button>
