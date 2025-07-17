@@ -225,31 +225,54 @@ function WalletPage() {
     const [usdWallet, setUsdWallet] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [amount, setAmount] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [userId, setUserId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const init = async ()=>{
             const user = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getLoggedInUser"])();
-            if (!user) return;
-            const data = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$walletapi$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fetchUserWallets"])(user.id);
-            if (data.length === 0) {
-                const newWallet = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$walletapi$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createWallet"])(user.id);
-                setUsdWallet(newWallet);
-                setWallets([
-                    newWallet
-                ]);
-            } else {
+            if (!user) {
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].error('User not logged in');
+                return;
+            }
+            setUserId(user.id);
+            try {
+                const data = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$walletapi$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fetchUserWallets"])(user.id);
+                if (data.length === 0) {
+                    setLoading(false);
+                    return;
+                }
                 const usd = data.find((w)=>w.token === 'USD');
                 setUsdWallet(usd || null);
                 setWallets(data);
+            } catch (err) {
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].error('Failed to load wallets');
+            } finally{
+                setLoading(false);
             }
-            setLoading(false);
         };
         init();
     }, []);
+    const handleGenerateWallet = async ()=>{
+        if (!userId) return;
+        try {
+            const newWallet = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$walletapi$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createWallet"])(userId, 'USD', 0);
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].success('Wallet created');
+            setUsdWallet(newWallet);
+            setWallets([
+                newWallet
+            ]);
+        } catch (err) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].error('Failed to create wallet');
+        }
+    };
     const handleAddMoney = async ()=>{
         if (!usdWallet || !amount) return;
         try {
+            if (parseFloat(amount) <= 0) {
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].error('Amount must be greater than 0');
+                return;
+            }
             const updated = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$walletapi$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addMoney"])(usdWallet.id, usdWallet.balance, parseFloat(amount));
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].success(`Added $${amount} to wallet`);
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].success(`Added ${amount} to wallet`);
             setUsdWallet(updated);
             setWallets((prev)=>prev.map((w)=>w.id === updated.id ? updated : w));
             setAmount('');
@@ -262,7 +285,7 @@ function WalletPage() {
         children: "Loading wallet..."
     }, void 0, false, {
         fileName: "[project]/app/(main)/wallet/page.tsx",
-        lineNumber: 54,
+        lineNumber: 80,
         columnNumber: 23
     }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -273,83 +296,131 @@ function WalletPage() {
                 children: "My Wallet"
             }, void 0, false, {
                 fileName: "[project]/app/(main)/wallet/page.tsx",
-                lineNumber: 58,
+                lineNumber: 84,
                 columnNumber: 7
             }, this),
-            usdWallet && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-gray-800 p-4 rounded border border-gray-700",
+            !usdWallet && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "space-y-4",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "text-sm text-gray-400",
-                        children: "USD Balance"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-gray-300",
+                        children: "You don't have a wallet yet."
                     }, void 0, false, {
                         fileName: "[project]/app/(main)/wallet/page.tsx",
-                        lineNumber: 62,
+                        lineNumber: 88,
                         columnNumber: 11
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "text-2xl font-semibold",
-                        children: [
-                            "$",
-                            usdWallet.balance.toFixed(2)
-                        ]
-                    }, void 0, true, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: handleGenerateWallet,
+                        className: "px-4 py-2 bg-green-600 hover:bg-green-500 rounded",
+                        children: "Generate Wallet"
+                    }, void 0, false, {
                         fileName: "[project]/app/(main)/wallet/page.tsx",
-                        lineNumber: 63,
+                        lineNumber: 89,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(main)/wallet/page.tsx",
-                lineNumber: 61,
+                lineNumber: 87,
                 columnNumber: 9
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "space-y-2",
+            usdWallet && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                        className: "block text-sm text-gray-300",
-                        children: "Add Money"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex justify-between items-center",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            className: "text-lg font-semibold",
+                            children: [
+                                "Your Wallet Id : ",
+                                usdWallet.id
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/(main)/wallet/page.tsx",
+                            lineNumber: 101,
+                            columnNumber: 13
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/(main)/wallet/page.tsx",
-                        lineNumber: 69,
+                        lineNumber: 100,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex gap-2",
+                        className: "bg-gray-800 p-4 rounded border border-gray-700",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                type: "number",
-                                value: amount,
-                                onChange: (e)=>setAmount(e.target.value),
-                                placeholder: "Amount in USD",
-                                className: "flex-1 px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-sm text-gray-400",
+                                children: "USD Balance"
                             }, void 0, false, {
                                 fileName: "[project]/app/(main)/wallet/page.tsx",
-                                lineNumber: 71,
-                                columnNumber: 11
+                                lineNumber: 105,
+                                columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: handleAddMoney,
-                                className: "px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded",
-                                children: "Add"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-2xl font-semibold",
+                                children: [
+                                    "$",
+                                    usdWallet.balance.toFixed(2)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/app/(main)/wallet/page.tsx",
-                                lineNumber: 78,
-                                columnNumber: 11
+                                lineNumber: 106,
+                                columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(main)/wallet/page.tsx",
-                        lineNumber: 70,
-                        columnNumber: 9
+                        lineNumber: 103,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "space-y-2",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                className: "block text-sm text-gray-300",
+                                children: "Add Money"
+                            }, void 0, false, {
+                                fileName: "[project]/app/(main)/wallet/page.tsx",
+                                lineNumber: 110,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex gap-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        type: "number",
+                                        value: amount,
+                                        onChange: (e)=>setAmount(e.target.value),
+                                        placeholder: "Amount in USD",
+                                        className: "flex-1 px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/(main)/wallet/page.tsx",
+                                        lineNumber: 112,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: handleAddMoney,
+                                        className: "px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded",
+                                        children: "Add"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/(main)/wallet/page.tsx",
+                                        lineNumber: 119,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/(main)/wallet/page.tsx",
+                                lineNumber: 111,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/(main)/wallet/page.tsx",
+                        lineNumber: 109,
+                        columnNumber: 11
                     }, this)
                 ]
-            }, void 0, true, {
-                fileName: "[project]/app/(main)/wallet/page.tsx",
-                lineNumber: 68,
-                columnNumber: 7
-            }, this),
+            }, void 0, true),
             wallets.length > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "space-y-3",
                 children: [
@@ -358,7 +429,7 @@ function WalletPage() {
                         children: "Your Tokens"
                     }, void 0, false, {
                         fileName: "[project]/app/(main)/wallet/page.tsx",
-                        lineNumber: 90,
+                        lineNumber: 132,
                         columnNumber: 11
                     }, this),
                     wallets.filter((w)=>w.token !== 'USD').map((w)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -368,32 +439,32 @@ function WalletPage() {
                                     children: w.token
                                 }, void 0, false, {
                                     fileName: "[project]/app/(main)/wallet/page.tsx",
-                                    lineNumber: 95,
+                                    lineNumber: 137,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: w.balance.toFixed(6)
                                 }, void 0, false, {
                                     fileName: "[project]/app/(main)/wallet/page.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 138,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, w.id, true, {
                             fileName: "[project]/app/(main)/wallet/page.tsx",
-                            lineNumber: 94,
+                            lineNumber: 136,
                             columnNumber: 15
                         }, this))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(main)/wallet/page.tsx",
-                lineNumber: 89,
+                lineNumber: 131,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/(main)/wallet/page.tsx",
-        lineNumber: 57,
+        lineNumber: 83,
         columnNumber: 5
     }, this);
 }

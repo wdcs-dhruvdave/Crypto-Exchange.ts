@@ -52,8 +52,7 @@ export default function CryptoTable() {
         : a.metrics?.marketcap?.current_marketcap_usd ?? 0
 
     const valB =
-      sortField === 'price'
-        ? b.metrics.market_data.price_usd
+      sortField === 'price'? b.metrics.market_data.price_usd
         : sortField === 'change'
         ? b.metrics.market_data.percent_change_usd_last_24_hours
         : b.metrics?.marketcap?.current_marketcap_usd ?? 0
@@ -74,7 +73,6 @@ export default function CryptoTable() {
       setSortOrder('asc')
     }
   }
-
 
   return (
     <div className="p-4">

@@ -490,12 +490,12 @@ function CryptoTable() {
                     className: "w-full md:w-72 px-4 py-2 rounded bg-gray-800 text-white border border-gray-700 placeholder:text-gray-400"
                 }, void 0, false, {
                     fileName: "[project]/components/CryptoList.tsx",
-                    lineNumber: 82,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/CryptoList.tsx",
-                lineNumber: 81,
+                lineNumber: 79,
                 columnNumber: 7
             }, this),
             selectedAsset && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$SwapModal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -503,7 +503,7 @@ function CryptoTable() {
                 onClose: ()=>setSelectedAsset(null)
             }, void 0, false, {
                 fileName: "[project]/components/CryptoList.tsx",
-                lineNumber: 92,
+                lineNumber: 90,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -521,7 +521,7 @@ function CryptoTable() {
                                             children: "Asset"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CryptoList.tsx",
-                                            lineNumber: 102,
+                                            lineNumber: 100,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -533,7 +533,7 @@ function CryptoTable() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/CryptoList.tsx",
-                                            lineNumber: 103,
+                                            lineNumber: 101,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -545,7 +545,7 @@ function CryptoTable() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/CryptoList.tsx",
-                                            lineNumber: 106,
+                                            lineNumber: 104,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -557,7 +557,7 @@ function CryptoTable() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/CryptoList.tsx",
-                                            lineNumber: 109,
+                                            lineNumber: 107,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -565,18 +565,18 @@ function CryptoTable() {
                                             children: "Action"
                                         }, void 0, false, {
                                             fileName: "[project]/components/CryptoList.tsx",
-                                            lineNumber: 112,
+                                            lineNumber: 110,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/CryptoList.tsx",
-                                    lineNumber: 101,
+                                    lineNumber: 99,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/CryptoList.tsx",
-                                lineNumber: 100,
+                                lineNumber: 98,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -592,20 +592,20 @@ function CryptoTable() {
                                                         className: "h-4 w-24 bg-gray-700 rounded mb-1"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/CryptoList.tsx",
-                                                        lineNumber: 120,
+                                                        lineNumber: 118,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "h-3 w-12 bg-gray-700 rounded"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/CryptoList.tsx",
-                                                        lineNumber: 121,
+                                                        lineNumber: 119,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/CryptoList.tsx",
-                                                lineNumber: 119,
+                                                lineNumber: 117,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -614,12 +614,12 @@ function CryptoTable() {
                                                     className: "h-4 w-20 bg-gray-700 rounded"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/CryptoList.tsx",
-                                                    lineNumber: 124,
+                                                    lineNumber: 122,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/CryptoList.tsx",
-                                                lineNumber: 123,
+                                                lineNumber: 121,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -628,12 +628,12 @@ function CryptoTable() {
                                                     className: "h-4 w-16 bg-gray-700 rounded"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/CryptoList.tsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 125,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/CryptoList.tsx",
-                                                lineNumber: 126,
+                                                lineNumber: 124,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -642,12 +642,12 @@ function CryptoTable() {
                                                     className: "h-4 w-24 bg-gray-700 rounded"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/CryptoList.tsx",
-                                                    lineNumber: 130,
+                                                    lineNumber: 128,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/CryptoList.tsx",
-                                                lineNumber: 129,
+                                                lineNumber: 127,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -656,18 +656,18 @@ function CryptoTable() {
                                                     className: "h-8 w-16 bg-gray-700 rounded"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/CryptoList.tsx",
-                                                    lineNumber: 133,
+                                                    lineNumber: 131,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/CryptoList.tsx",
-                                                lineNumber: 132,
+                                                lineNumber: 130,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, idx, true, {
                                         fileName: "[project]/components/CryptoList.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 116,
                                         columnNumber: 15
                                     }, this)) : sorted.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -676,12 +676,12 @@ function CryptoTable() {
                                         children: "Loading..."
                                     }, void 0, false, {
                                         fileName: "[project]/components/CryptoList.tsx",
-                                        lineNumber: 139,
+                                        lineNumber: 137,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/CryptoList.tsx",
-                                    lineNumber: 139,
+                                    lineNumber: 137,
                                     columnNumber: 15
                                 }, this) : sorted.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -690,12 +690,12 @@ function CryptoTable() {
                                         children: "No assets found."
                                     }, void 0, false, {
                                         fileName: "[project]/components/CryptoList.tsx",
-                                        lineNumber: 141,
+                                        lineNumber: 139,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/CryptoList.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 139,
                                     columnNumber: 15
                                 }, this) : sorted.map((asset)=>{
                                     var _asset_metrics_market_data_percent_change_usd_last_24_hours, _asset_metrics_marketcap, _asset_metrics;
@@ -711,7 +711,7 @@ function CryptoTable() {
                                                         children: asset.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/CryptoList.tsx",
-                                                        lineNumber: 146,
+                                                        lineNumber: 144,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -719,13 +719,13 @@ function CryptoTable() {
                                                         children: asset.symbol
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/CryptoList.tsx",
-                                                        lineNumber: 147,
+                                                        lineNumber: 145,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/CryptoList.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 143,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -736,7 +736,7 @@ function CryptoTable() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/CryptoList.tsx",
-                                                lineNumber: 149,
+                                                lineNumber: 147,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -747,7 +747,7 @@ function CryptoTable() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/CryptoList.tsx",
-                                                lineNumber: 150,
+                                                lineNumber: 148,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -758,7 +758,7 @@ function CryptoTable() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/CryptoList.tsx",
-                                                lineNumber: 153,
+                                                lineNumber: 151,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -769,30 +769,30 @@ function CryptoTable() {
                                                     children: "Swap"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/CryptoList.tsx",
-                                                    lineNumber: 155,
+                                                    lineNumber: 153,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/CryptoList.tsx",
-                                                lineNumber: 154,
+                                                lineNumber: 152,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, asset.id, true, {
                                         fileName: "[project]/components/CryptoList.tsx",
-                                        lineNumber: 144,
+                                        lineNumber: 142,
                                         columnNumber: 17
                                     }, this);
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/components/CryptoList.tsx",
-                                lineNumber: 115,
+                                lineNumber: 113,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/CryptoList.tsx",
-                        lineNumber: 99,
+                        lineNumber: 97,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -805,7 +805,7 @@ function CryptoTable() {
                                 children: "Previous"
                             }, void 0, false, {
                                 fileName: "[project]/components/CryptoList.tsx",
-                                lineNumber: 170,
+                                lineNumber: 168,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -816,12 +816,12 @@ function CryptoTable() {
                                         children: p
                                     }, p, false, {
                                         fileName: "[project]/components/CryptoList.tsx",
-                                        lineNumber: 180,
+                                        lineNumber: 178,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/components/CryptoList.tsx",
-                                lineNumber: 178,
+                                lineNumber: 176,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -831,7 +831,7 @@ function CryptoTable() {
                                 children: "Next"
                             }, void 0, false, {
                                 fileName: "[project]/components/CryptoList.tsx",
-                                lineNumber: 194,
+                                lineNumber: 192,
                                 columnNumber: 11
                             }, this),
                             pageWindowStart > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -840,7 +840,7 @@ function CryptoTable() {
                                 children: "Show Less"
                             }, void 0, false, {
                                 fileName: "[project]/components/CryptoList.tsx",
-                                lineNumber: 203,
+                                lineNumber: 201,
                                 columnNumber: 13
                             }, this),
                             pageWindowStart + PAGE_WINDOW_SIZE <= totalPages && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -849,25 +849,25 @@ function CryptoTable() {
                                 children: "Show More"
                             }, void 0, false, {
                                 fileName: "[project]/components/CryptoList.tsx",
-                                lineNumber: 212,
+                                lineNumber: 210,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/CryptoList.tsx",
-                        lineNumber: 169,
+                        lineNumber: 167,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/CryptoList.tsx",
-                lineNumber: 98,
+                lineNumber: 96,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/CryptoList.tsx",
-        lineNumber: 80,
+        lineNumber: 78,
         columnNumber: 5
     }, this);
 }
