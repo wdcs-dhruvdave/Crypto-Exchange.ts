@@ -1,7 +1,9 @@
 {
   "/(auth)/login/page": "app/(auth)/login/page.js",
   "/(main)/market/page": "app/(main)/market/page.js",
+  "/(main)/transactions/page": "app/(main)/transactions/page.js",
   "/(main)/wallet/page": "app/(main)/wallet/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js"
 }
