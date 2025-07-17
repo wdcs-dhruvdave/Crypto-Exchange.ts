@@ -85,7 +85,7 @@ export default function WalletPage() {
 
       {!usdWallet && (
         <div className="space-y-4">
-          <p className="text-gray-300">You don't have a wallet yet.</p>
+          <p className="text-gray-300">You don&apos;t have a wallet yet.</p>
           <button
             onClick={handleGenerateWallet}
             className="px-4 py-2 bg-green-600 hover:bg-green-500 rounded"
